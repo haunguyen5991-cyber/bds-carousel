@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #f1f1ef; }
+    .carousel-container { width: 100%; height: 100vh; max-height: 450px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .carousel-inner { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; width: 100%; height: 100%; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+    .carousel-inner::-webkit-scrollbar { display: none; }
+    .carousel-slide { min-width: 100%; width: 100%; height: 100%; scroll-snap-align: start; display: flex; align-items: center; justify-content: center; }
+    .carousel-slide img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; pointer-events: none; }
+    .indicator { position: absolute; bottom: 12px; right: 12px; background: rgba(15, 15, 15, 0.7); color: #ffffff; padding: 4px 10px; font-size: 12px; font-weight: 500; border-radius: 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; pointer-events: none; letter-spacing: 0.5px; }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="carousel-inner" id="slider">
+      
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743071/z7907729167329_8301a60af5ff47282bf64abe13d322d1_ytna32.jpg" alt="BDS Image 1" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743071/z7907729167330_8fc93e4c0d8f592db8dfeae80254328c_obcalm.jpg" alt="BDS Image 2" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743048/7_etirgd.jpg" alt="BDS Image 3" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743048/6_jfzflx.jpg" alt="BDS Image 4" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743046/1_zyg6tz.jpg" alt="BDS Image 5" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743046/4_kzh73g.jpg" alt="BDS Image 6" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743047/5_uqu7zo.jpg" alt="BDS Image 7" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780743048/SH_1_supmsf.jpg" alt="BDS Image 8" loading="lazy">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dcspxywol/image/upload/v1780742143/SH_2_dxwwhe.jpg" alt="BDS Image 9" loading="lazy">
+    </div>
+    </div>
+    <div class="indicator" id="counter">1 / 9</div>
+  </div>
+  <script>
+    const slider = document.getElementById("slider");
+    const counter = document.getElementById("counter");
+    slider.addEventListener("scroll", () => {
+      const pageIndex = Math.round(slider.scrollLeft / slider.clientWidth) + 1;
+      counter.innerText = pageIndex + " / " + 9;
+    });
+  </script>
+</body>
+</html>
