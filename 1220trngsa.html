@@ -105,7 +105,7 @@
 <body>
   <div class="gallery">
     <div class="main-view" id="mainView">
-      <div class="counter" id="counter">1 / 11</div>
+      <div class="counter" id="counter">1 / 10</div>
       <div id="mainMediaWrap" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;"></div>
       <div class="brand-label">dulieunhapho.com</div>
     </div>
@@ -116,7 +116,6 @@
     const items = [
       { url: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_1920,h_800,q_auto:best,f_auto,dpr_auto/v1783271524/IMG_2456_rwtvwh.jpg', thumb: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_300,h_300,q_auto:best,f_auto,dpr_auto/v1783271524/IMG_2456_rwtvwh.jpg', type: 'image' },
       { url: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_1920,h_800,q_auto:best,f_auto,dpr_auto/v1780727874/1_phju8v.jpg', thumb: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_300,h_300,q_auto:best,f_auto,dpr_auto/v1780727874/1_phju8v.jpg', type: 'image' },
-      { url: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_1920,h_800,q_auto:best,f_auto,dpr_auto/v1780727874/IMG_2437_tz9ame.heic', thumb: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_300,h_300,q_auto:best,f_auto,dpr_auto/v1780727874/IMG_2437_tz9ame.heic', type: 'image' },
       { url: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_1920,h_800,q_auto:best,f_auto,dpr_auto/v1780727874/2_bmpuyz.jpg', thumb: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_300,h_300,q_auto:best,f_auto,dpr_auto/v1780727874/2_bmpuyz.jpg', type: 'image' },
       { url: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_1920,h_800,q_auto:best,f_auto,dpr_auto/v1783271527/IMG_2470_ke3pgm.jpg', thumb: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_300,h_300,q_auto:best,f_auto,dpr_auto/v1783271527/IMG_2470_ke3pgm.jpg', type: 'image' },
       { url: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_1920,h_800,q_auto:best,f_auto,dpr_auto/v1783271520/IMG_2440_sf5ypc.jpg', thumb: 'https://res.cloudinary.com/dcspxywol/image/upload/c_fill,g_auto,w_300,h_300,q_auto:best,f_auto,dpr_auto/v1783271520/IMG_2440_sf5ypc.jpg', type: 'image' },
@@ -137,7 +136,9 @@
       if (item.type === 'video') {
         wrap.innerHTML = '<video src="' + item.url + '" muted preload="metadata" controls></video>';
       } else {
-        wrap.innerHTML = '<img src="' + item.url + '" loading="lazy">';
+        // ? Cover (index 0): eager load | Rest: lazy load
+        var loadAttr = currentIndex === 0 ? 'eager' : 'lazy';
+        wrap.innerHTML = '<img src="' + item.url + '" loading="' + loadAttr + '">';
       }
       
       document.getElementById('counter').textContent = (currentIndex + 1) + ' / ' + items.length;
