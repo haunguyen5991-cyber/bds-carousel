@@ -11,7 +11,9 @@
     .carousel-slide { min-width: 100%; width: 100%; height: 100%; scroll-snap-align: start; display: flex; align-items: center; justify-content: center; }
     .carousel-slide img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; pointer-events: none; }
     .indicator { position: absolute; bottom: 12px; right: 12px; background: rgba(15, 15, 15, 0.7); color: #ffffff; padding: 4px 10px; font-size: 12px; font-weight: 500; border-radius: 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; pointer-events: none; letter-spacing: 0.5px; }
-  </style>
+  
+.fullscreen-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.94);backdrop-filter:blur(6px);padding:24px;box-sizing:border-box}.fullscreen-overlay.open{display:flex}.fullscreen-overlay img{max-width:calc(100vw - 96px);max-height:calc(100vh - 72px);width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.65)}.fullscreen-close,.fullscreen-prev,.fullscreen-next{position:absolute;border:0;color:#fff;background:rgba(30,30,30,.72);cursor:pointer;width:44px;height:44px;border-radius:50%;font-size:30px;line-height:40px;text-align:center;z-index:2}.fullscreen-close{top:18px;right:18px;font-size:28px}.fullscreen-prev{left:18px;top:50%;transform:translateY(-50%)}.fullscreen-next{right:18px;top:50%;transform:translateY(-50%)}.fullscreen-close:hover,.fullscreen-prev:hover,.fullscreen-next:hover{background:rgba(212,175,55,.9);color:#111}.carousel-slide img{cursor:zoom-in}@media(max-width:600px){.fullscreen-overlay{padding:12px}.fullscreen-overlay img{max-width:calc(100vw - 56px);max-height:calc(100vh - 56px)}.fullscreen-close{top:10px;right:10px}.fullscreen-prev{left:6px}.fullscreen-next{right:6px}}
+</style>
 </head>
 <body>
   <div class="carousel-container">
@@ -52,5 +54,7 @@
       counter.innerText = pageIndex + " / " + 8;
     });
   </script>
-</body>
+<div class="fullscreen-overlay" id="fullscreenOverlay" role="dialog" aria-modal="true" aria-label="Xem ảnh toàn màn hình"><button class="fullscreen-close" id="fullscreenClose" aria-label="Đóng">×</button><button class="fullscreen-prev" id="fullscreenPrev" aria-label="Ảnh trước">‹</button><img id="fullscreenImage" alt="Ảnh bất động sản toàn màn hình"><button class="fullscreen-next" id="fullscreenNext" aria-label="Ảnh tiếp theo">›</button></div><script>
+(function(){var overlay=document.getElementById("fullscreenOverlay"),fullImg=document.getElementById("fullscreenImage"),closeBtn=document.getElementById("fullscreenClose"),prevBtn=document.getElementById("fullscreenPrev"),nextBtn=document.getElementById("fullscreenNext"),slides=Array.prototype.slice.call(document.querySelectorAll(".carousel-slide img")),current=0;function show(i){if(!slides.length)return;current=(i+slides.length)%slides.length;fullImg.src=slides[current].src;fullImg.alt=slides[current].alt||"Ảnh bất động sản";overlay.classList.add("open");document.body.style.overflow="hidden";}function close(){overlay.classList.remove("open");document.body.style.overflow="hidden";fullImg.removeAttribute("src");}slides.forEach(function(img,i){img.addEventListener("click",function(e){e.stopPropagation();show(i);});});closeBtn.addEventListener("click",function(e){e.stopPropagation();close();});prevBtn.addEventListener("click",function(e){e.stopPropagation();show(current-1);});nextBtn.addEventListener("click",function(e){e.stopPropagation();show(current+1);});overlay.addEventListener("click",function(e){if(e.target===overlay)close();});document.addEventListener("keydown",function(e){if(!overlay.classList.contains("open"))return;if(e.key==="Escape")close();else if(e.key==="ArrowLeft")show(current-1);else if(e.key==="ArrowRight")show(current+1);});})();
+</script></body>
 </html>
