@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yêu cầu liên hệ chính chủ</title>
+<style>
+:root{--ink:#2c2c2b;--muted:#7d7a75;--line:#e6e5e3;--soft:#f9f8f7;--blue:#2783de;--blue-soft:#e5f2fc}
+*{box-sizing:border-box} body{margin:0;background:#fff;color:var(--ink);font:16px/1.5 Arial,sans-serif}
+main{max-width:760px;margin:auto;padding:64px 28px 80px} .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--muted);margin:0 0 12px}
+h1{font:500 clamp(32px,5vw,52px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:0;max-width:650px}
+.lead{font-size:18px;color:var(--muted);max-width:590px;margin:18px 0 40px}
+form{border-top:1px solid var(--line);padding-top:32px} .field{margin:0 0 22px} label{display:block;font-weight:600;margin:0 0 8px}
+.hint{display:block;color:var(--muted);font-size:14px;font-weight:400;margin-top:3px}
+input,select,textarea{width:100%;min-height:48px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink);font:inherit;padding:12px 14px;outline:none}
+textarea{min-height:108px;resize:vertical} input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.asset-wrap{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px} .asset-wrap .field:last-child{margin-bottom:0}
+button{width:100%;min-height:50px;border:0;border-radius:8px;background:var(--ink);color:white;font:600 16px Arial,sans-serif;cursor:pointer;margin-top:10px}
+button:hover{background:#111} button:disabled{opacity:.55;cursor:wait} .privacy{font-size:14px;color:var(--muted);margin:14px 0 0;text-align:center}
+.notice{display:none;margin:28px 0 0;padding:18px;border:1px solid #cfe6d9;background:#e8f1ec;border-radius:8px;color:#275d42}
+.hp{position:absolute;left:-9999px;opacity:0} @media(max-width:560px){main{padding:38px 18px 56px}.lead{font-size:16px;margin-bottom:30px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head><body><main>
+<p class="eyebrow">Dữ liệu nhà phố</p><h1>Yêu cầu liên hệ chính chủ</h1>
+<p class="lead">Chọn đúng tài sản và để lại thông tin. Yêu cầu được ghi trực tiếp vào hồ sơ riêng tư tương ứng để đối chiếu trước khi phản hồi.</p>
+<form id="requestForm" method="post" action="https://28947534664.webhook.notionusercontent.com/webhooks/worker/b876bd68-5348-819c-add0-0003134439f9/01a0e843-52e9-72c8-b19c-89dbbb0a24f6/n03dJqSDUVFQVfLC/capturePropertyContactRequest" target="submitFrame">
+<div class="asset-wrap">
+<div class="field"><label for="assetSearch">Tìm tài sản<span class="hint">Tìm theo địa chỉ hoặc mã UUID</span></label><input id="assetSearch" type="search" placeholder="Ví dụ: 433 Cộng Hòa hoặc 433cngha" autocomplete="off"></div>
+<div class="field"><label for="assetPageId">Tài sản đã chọn</label><select id="assetPageId" name="assetPageId" required><option value="">Chọn một tài sản…</option><option value="3906bd685348811db46ce0ae92b5b88d">1005 Âu Cơ, Tân Bình — 1005uc</option>
+<option value="3906bd685348811da635d74901ad31fe">101 Rạch Bùng Binh, Quận 3 — 101rchbngbinh</option>
+<option value="3906bd685348818d951ae7d037f8fdb6">103-105 Phan Xích Long, Phú Nhuận — 103105phanxchlong</option>
+<option value="3906bd6853488145a3dde69fdde6b205">1033 Xô Viết Nghệ Tĩnh, phường 28, Bình Thạnh — 1033xvitnghtnh</option>
+<option value="3906bd68534881a9b291d77b2c6e46dd">1039 Hoàng Sa, Quận 3 — 1039hongsa</option>
+<option value="3906bd6853488124b3ddf8298578c103">1044 Lạc Long Quân, Tân Bình — 1044lclongqun</option>
+<option value="3906bd68534881d1951dc82bccf90980">106 Bành Văn Trân, Tân Bình — 106bnhvntrn</option>
+<option value="3906bd68534881f38d44de2a1b9bade3">1068 Trường Sa, Quận 3 — 1068trngsa</option>
+<option value="3906bd68534881559e0ef9156af2c8e9">107 Cộng Hòa, Tân Bình — 107cngha</option>
+<option value="3906bd68534881e29846f3b0ac85ecc2">1077 Lạc Long Quân, Tân Bình — 1077lclongqun</option>
+<option value="3906bd68534881e49d16c28f1b574190">1081 Lạc Long Quân, Tân Bình — 1081lclongqun</option>
+<option value="3906bd685348817b8a0cd3383babe8b4">11 Lê Quang Định, Bình Thạnh — 11lquangnh</option>
+<option value="3906bd685348818f9ef8f5e20885c683">11 Văn Chung, Tân Bình — 11vnchung</option>
+<option value="3906bd68534881ed8d4fca4ea139b8d2">111-113-115-117 Phan Đình Phùng, P.17 (và 95/3), Phú Nhuận — 111113115117phannhphng</option>
+<option value="3906bd68534881a0ba1dddea44de5053">112 - 114 - 134/2b đường Lê Trung Nghĩa, Tân Bình — 1121141342bngltrungngha</option>
+<option value="3906bd6853488148bf01eb5c9eac2e4f">112 Hùng Vương, Quận 10 — 112hngvng</option>
+<option value="3906bd6853488130a8c6d0201f20c843">113 Bạch Đằng, Tân Bình — 113bchng</option>
+<option value="3906bd6853488184ac2bca165aba71aa">114 Nguyễn Lâm, Quận 10 — 114nguynlm</option>
+<option value="3906bd6853488121876ff779a5e96de9">1148 Ba Tháng Hai, Quận 11 — 1148bathnghai</option>
+<option value="3906bd685348811cb502dd9968d282ce">115 Phạm Ngũ Lão, phường PNL, Quận 1 — 115phmnglo</option>
+<option value="3906bd6853488108846df102c2d55fd9">116 Bàu Cát 2, Tân Bình — 116buct2</option>
+<option value="3906bd68534881d3932dcf234a2e0364">117 Phạm Phú Thứ, Tân Bình — 117phmphth</option>
+<option value="3906bd685348817c9064cb706b9870d4">119 Lê Đại Hành, Quận 11 — 119lihnh</option>
+<option value="3906bd68534881ca847ac9a31558925d">119 Nguyễn Trãi, p2, Quận 5 — 119nguyntri</option>
+<option value="3906bd68534881ec99a5c02a103ef530">12 Văn Thân, P.8, Quận 6 — 12vnthn</option>
+<option value="3906bd68534881c0ac4af4cc9a24c917">12 Đoàn Thị Điểm, Phú Nhuận — 12onthim</option>
+<option value="3906bd685348819fb36ecbb216d4d944">12 Đồng Nai, Tân Bình — 12ngnai</option>
+<option value="3906bd685348812e942ae476991fb01f">120 Hồ Tùng Mậu, Quận 1 — 120htngmu</option>
+<option value="3906bd685348819fac6be57ec0cd77be">1220 Trường Sa, Phú Nhuận — 1220trngsa</option>
+<option value="3906bd68534881b38c99ee24d0ca7e50">123A-123Bis Lê Thị Riêng, Quận 1 — 123a123bislthring</option>
+<option value="3906bd68534881aa9a97d95a9e95de0a">126 Phan Đình Phùng, Phú Nhuận — 126phannhphng</option>
+<option value="3906bd68534881848dd5c7554d709fb6">1270 Lạc Long Quân, Tân Bình — 1270lclongqun</option>
+<option value="3906bd6853488149ba31c3298d756fb2">128 Bà Hạt, Quận 10 — 128bht</option>
+<option value="3906bd68534881f393f1e7cc1c100d21">128 Hoàng Văn Thụ, Phường 9, Phú Nhuận — 128hongvnth</option>
+<option value="3906bd685348815283cbeb28094121ae">129 Trường Chinh, Tân Bình — 129trngchinh</option>
+<option value="3906bd685348810fa98dee05778fc67d">129bis Lý Chính Thắng, Quận 3 — 129bislchnhthng</option>
+<option value="3906bd6853488146a9eccced28204c52">1333 Hoàng Sa, Tân Bình — 1333hongsa</option>
+<option value="3906bd68534881cba6e0fc177eca7d0e">134 Ngô Quyền, Quận 10 — 134ngquyn</option>
+<option value="3906bd6853488182a364e5879c63ddc6">135 Trần Não, Quận 2 — 135trnno</option>
+<option value="3906bd68534881eb86c4de4ece8fe753">135 Đồng đen, Tân Bình — 135ngen</option>
+<option value="3906bd6853488128aaf2c8d9df4553ea">136 Trần Văn Quang, Tân Bình — 136trnvnquang</option>
+<option value="3906bd685348816a96e3eecea295245d">141 Nguyễn Trãi, Quận 5 — 141nguyntri</option>
+<option value="3906bd68534881b48307e66bf705778b">141 Xuân Hồng, Tân Bình — 141xunhng</option>
+<option value="3906bd68534881b3bf43cd2821e67439">141 Đề Thám, Quận 1 — 141thm</option>
+<option value="3906bd68534881e1a4fbf5d51b0e9ad2">142 Tân Sơn Nhì, Tân Phú — 142tnsnnh</option>
+<option value="3906bd685348817da576ca325c4a1d86">145 Phan Đình Phùng, Phú Nhuận — 145phannhphng</option>
+<option value="3906bd68534881bfb5a3f26bc013e047">148 - 150 Tân Sơn Nhì, Tân Phú — 148150tnsnnh</option>
+<option value="3906bd685348819aa039d68d74b42744">148 Hoàng Văn Thụ, Phú Nhuận — 148hongvnth</option>
+<option value="3906bd68534881afb454d3c8f9d7f9e1">148 Quang Trung, Gò Vấp — 148quangtrung</option>
+<option value="3906bd6853488106999dd9b2eb316b8a">150 Lê Đức Thọ, Gò Vấp — 150lcth</option>
+<option value="3906bd68534881c5bb06df68f7dc1dd0">152B Lý Chính Thắng, Quận 3 — 152blchnhthng</option>
+<option value="3906bd685348818ea8c3c80ce4560a4d">153 Cộng Hòa, Tân Bình — 153cngha</option>
+<option value="3906bd6853488104ab5bced83a3f4448">153A Phan Đăng Lưu, Phú Nhuận — 153aphannglu</option>
+<option value="3906bd685348815fb071fb337e2c6f81">155 Vạn Kiếp, Bình Thạnh — 155vnkip</option>
+<option value="3906bd685348818bb3c3e623db6fe7a7">157C Nguyễn Trãi, Quận 5 — 157cnguyntri</option>
+<option value="3906bd685348819bbcf9e61a39ca528b">16 Hồ Văn Huê, Phú Nhuận — 16hvnhu</option>
+<option value="3906bd68534881dbbbbbf26100d9d2dd">16 Nguyễn Văn Khối, Gò Vấp — 16nguynvnkhi</option>
+<option value="3906bd68534881bdaf8fc0801c0cafab">16 Phan Thúc Duyện, Tân Bình — 16phanthcduyn</option>
+<option value="3906bd685348814bacf8f2e0c4b8c48e">16 Phan Tây Hồ, Phú Nhuận — 16phantyh</option>
+<option value="3906bd685348815e8ad2ee81d6c6d814">16 Đặng Thái Thân, Quận 5 — 16ngthithn</option>
+<option value="3906bd6853488106ba67c6baa17960a6">160-160A Nguyễn Cư Trinh, Quận 1 — 160160anguynctrinh</option>
+<option value="3906bd68534881a4b35fe1a11eb8f49a">160-162 Bàu Cát, phường 14, Tân Bình — 160162buct</option>
+<option value="3906bd685348811c9269f38180cf4351">162A Nguyễn Gia Trí, Bình Thạnh — 162anguyngiatr</option>
+<option value="3906bd685348818da467f79f114e7829">162D Trường Chinh, Tân Bình — 162dtrngchinh</option>
+<option value="3906bd685348814fbd46d7b41e624066">163 Nguyễn Hồng Đào, Tân Bình — 163nguynhngo</option>
+<option value="3906bd685348815e9801f886b6bb4ca4">165 Nguyễn Thái Bình, Tân Bình — 165nguynthibnh</option>
+<option value="3906bd68534881709e4bd7c7fe76aaf2">165 Nguyễn Văn Thủ, Quận 1 — 165nguynvnth</option>
+<option value="3906bd68534881dbb547dcc7d9359ed2">166 Nguyễn Trọng Tuyển, Tân Bình — 166nguyntrngtuyn</option>
+<option value="3906bd6853488166bd42fe7c1a9d7f87">168 Đỗ Thị Lời, P11, Quận 3 — 168thli</option>
+<option value="3906bd6853488190bfe8f851db91d815">17 Đặng Tất, Quận 1 — 17ngtt</option>
+<option value="3906bd685348811dacb9f542a6b3e2ef">17-19 Phan Đình Phùng, Phú Nhuận — 1719phannhphng</option>
+<option value="3906bd68534881eebcfed9296faa287f">171 Nguyễn Văn Khối, Gò Vấp — 171nguynvnkhi</option>
+<option value="3906bd685348817d980cf96f7fca8cbf">172D Lạc Long Quân, Quận 11 — 172dlclongqun</option>
+<option value="3906bd685348813d8a25f3c564e99da5">177 Huỳnh Văn Bánh, Phú Nhuận — 177hunhvnbnh</option>
+<option value="3906bd685348816fb62ad0126070f15e">177 Phan Đình Phùng, Phú Nhuận — 177phannhphng</option>
+<option value="3906bd68534881b8b2d2eea30000b79f">177 Trần Thị Trọng, Tân Bình — 177trnthtrng</option>
+<option value="3906bd685348815a88aad990d4d65b91">178 Tạ Uyên, Quận 11 — 178tuyn</option>
+<option value="3906bd68534881778ce5e6f5f5f300b4">18 Lê Quang Định, phường 5, Bình Thạnh — 18lquangnh</option>
+<option value="3906bd68534881e5a623fb09798c6ee2">182 Ngô Quyền, Quận 10 — 182ngquyn</option>
+<option value="3906bd68534881028d4fdcf8bfa652ec">185-187 Cộng Hòa, Tân Bình — 185187cngha</option>
+<option value="3906bd68534881f48839da3150768e5b">187 Nguyễn Đình Chiểu, Quận 3 — 187nguynnhchiu</option>
+<option value="3906bd685348818caa08ed73cebbc7c6">188 CMT8, Quận 3 — 188cmt8</option>
+<option value="3906bd6853488199b0a0d8a5509f9f2f">188 Tân Phước, Quận 10 — 188tnphc</option>
+<option value="3906bd68534881f9b58efc4bc1929fad">193 Hoa Lan, Phú Nhuận — 193hoalan</option>
+<option value="3906bd685348816e8cd5d25b12540119">194 Nguyễn Thái Bình, Tân Bình — 194nguynthibnh</option>
+<option value="3906bd68534881218ed8eda64517af3a">195 Vĩnh Viễn, Quận 10 — 195vnhvin</option>
+<option value="3906bd6853488158899ef726d1a50bd6">195A Nguyễn Phúc Chu, Tân Bình — 195anguynphcchu</option>
+<option value="3906bd6853488167bf43f8cce6bea63f">197 Nguyễn Oanh, Gò Vấp — 197nguynoanh</option>
+<option value="3906bd6853488109aa28f6da8585a2a3">198 Nguyễn Phúc Nguyên, P9, Quận 3 — 198nguynphcnguyn</option>
+<option value="3906bd685348819fbe88dfad4ac6b962">1A đường Thạch Thị Thanh, Phường Tân Định, Quận 1 — 1angthchththanh</option>
+<option value="3906bd685348811facf1fe4beb2fb95d">2 đường số 85 &amp; 42 Tân Quy, Quận 7 — 2ngs8542tnquy</option>
+<option value="3906bd6853488176a9e0e98831da4435">201 Lý Thái Tổ, Quận 10 — 201lthit</option>
+<option value="3906bd6853488186814ed0f552a71108">205 Trần Bình Trọng, Quận 5 — 205trnbnhtrng</option>
+<option value="3906bd6853488161b801fd44bdf06e1c">209A-209B Hoàng Văn Thụ, Phú Nhuận — 209a209bhongvnth</option>
+<option value="3906bd685348819ba600fbcd58c0e4a3">21 Sao Mai, Tân Bình — 21saomai</option>
+<option value="3906bd68534881aab02cc36bfcff69aa">214Bis Võ Văn Tần, Quận 3 — 214bisvvntn</option>
+<option value="3906bd6853488141b46fc791368d065a">215 Bùi Đình Túy, Bình Thạnh — 215binhty</option>
+<option value="3906bd68534881168a51d464f7509885">217B Phạm Viết Chánh, Quận 1 — 217bphmvitchnh</option>
+<option value="3906bd685348815ba2a0efaced02a2e2">21A Hậu Giang, Tân Bình — 21ahugiang</option>
+<option value="3906bd68534881418b35f81e81e5e24a">22 Nguyễn Thái Bình, Tân Bình — 22nguynthibnh</option>
+<option value="3906bd68534881ac99b4cb26494da9cb">22 Đông Hồ, Tân Bình — 22ngh</option>
+<option value="3906bd685348818e8eddd6bc7c21105e">22-24 Phan Thúc Duyện, Tân Bình — 2224phanthcduyn</option>
+<option value="3906bd6853488162b4b3d7e51877f345">220 Phan Đăng Lưu, Phú Nhuận — 220phannglu</option>
+<option value="3906bd685348812194fdc26784e2b126">220 Võ Văn Tần, Quận 3 — 220vvntn</option>
+<option value="3906bd685348815dbbd3e7711bb4bbb2">224-226 Phan Xích Long, P7, Phú Nhuận — 224226phanxchlong</option>
+<option value="3906bd68534881c2aa2ae3c0978af299">224a Bạch Đằng, Bình Thạnh — 224abchng</option>
+<option value="3906bd68534881d28f74d5cba126d184">228E Bạch Đằng, Bình Thạnh — 228ebchng</option>
+<option value="3906bd68534881c7a887dcf392ba5d01">23 Bàu Cát, Tân Bình — 23buct</option>
+<option value="3906bd68534881f485f3e765ca0b4b44">23 Đông Du, Quận 1 — 23ngdu</option>
+<option value="3906bd68534881ecb009f4e3faf47929">233 Nguyễn Đình Chiểu, Quận 3 — 233nguynnhchiu</option>
+<option value="3906bd68534881f8b6e6e9fa0414ab25">237 Lê Đức Thọ, Gò Vấp — 237lcth</option>
+<option value="3906bd68534881719255c617208fdfca">239 Thích Quảng Đức, Phú Nhuận — 239thchqungc</option>
+<option value="3906bd6853488126a8a4f7f9196a9cf9">24 C12, Tân Bình — 24c12</option>
+<option value="3906bd685348817a8edef76b4cf04bae">24 Lâm Văn Bền, Tân Kiểng, Quận 7 — 24lmvnbn</option>
+<option value="3906bd685348814d8f1ee49648933d99">24 Nguyễn Bá Tuyển, Phường Bảy Hiền, Tân Bình — 24nguynbtuyn</option>
+<option value="3906bd68534881fd883ae031a1906d4a">240 Cao Thắng, Quận 10 — 240caothng</option>
+<option value="3906bd6853488100beb3e10df338060a">240 Nguyễn Văn Luông, P11, Quận 6 — 240nguynvnlung</option>
+<option value="3906bd68534881418870ced010556984">241-245 Cộng Hòa, Tân Bình — 241245cngha</option>
+<option value="3906bd68534881d08995fd5a7d3b6fc3">242 Bàu Cát, Tân Bình — 242buct</option>
+<option value="3906bd68534881948c3bceda39e3e3ad">25 Lê Văn Huân, P13, Tân Bình — 25lvnhun</option>
+<option value="3906bd685348814f9118c7522bfa7df2">25 Võ Văn Tần, Quận 3 — 25vvntn</option>
+<option value="3906bd68534881cc8cf6d2c035fb4123">251 Võ Văn Tần, Quận 3 — 251vvntn</option>
+<option value="3906bd685348815f93b8d99c94dd87d3">256-258 Ngô Gia Tự, Quận 10 — 256258nggiat</option>
+<option value="3906bd6853488105ab07d0531f538f3b">258-260 Cao Thắng, P12, Quận 10 — 258260caothng</option>
+<option value="3906bd68534881a99f4bfc0c4e603795">259bis Trần Quang Khải, Quận 1 — 259bistrnquangkhi</option>
+<option value="3906bd68534881108b77da011bb17520">26 Phạm Cự Lượng, Tân Bình — 26phmclng</option>
+<option value="3906bd68534881eaa20ef928c866ebed">260 Nguyễn Văn Đậu, Bình Thạnh — 260nguynvnu</option>
+<option value="3906bd6853488194b361d27698a7d494">261L Nguyễn Văn Trỗi, P.10, Phú Nhuận — 261lnguynvntri</option>
+<option value="3906bd68534881a4a327cdca2e8cd24e">266 Lê Quang Định, Bình Thạnh — 266lquangnh</option>
+<option value="3906bd685348815ca98efc7791b32daa">27 Trần Triệu Luật, Tân Bình — 27trntriulut</option>
+<option value="3906bd685348816190fed55bc468283b">270 Lê Văn Sỹ, Quận 3 — 270lvns</option>
+<option value="3906bd6853488119904af608a198ab4f">271 Phan Xích Long, p2, Phú Nhuận — 271phanxchlong</option>
+<option value="3906bd68534881c88f31d25526741d67">275 Hoàng Sa, Quận 1 — 275hongsa</option>
+<option value="3906bd68534881e09f63fb54f57afeeb">279 Võ Thành Trang và Phạm Phú Thứ, Tân Bình — 279vthnhtrangvphmphth</option>
+<option value="3906bd6853488153a7e3edffa6dca30f">282 CMT8, Quận 3 — 282cmt8</option>
+<option value="3906bd68534881ce9265f3e7be1022f9">282 Cống Quỳnh, Quận 1 — 282cngqunh</option>
+<option value="3906bd68534881f98073cc0f7212b497">286A Nguyễn Trọng Tuyển, Tân Bình — 286anguyntrngtuyn</option>
+<option value="3906bd6853488163afc0fb26a760cc72">29 Đỗ Thị Lời, P11, Quận 3 — 29thli</option>
+<option value="3906bd68534881e489a7d6565479baf8">292 Phạm Văn Hai, phường 5, Tân Bình — 292phmvnhai</option>
+<option value="3906bd68534881738fd5ffde4a78b86a">293 Nguyễn Đình Chiểu, Quận 3 — 293nguynnhchiu</option>
+<option value="3906bd685348818a9e07fe072c3dc723">297-299 Lê Quang Định, Bình Thạnh — 297299lquangnh</option>
+<option value="3906bd685348811d8539cd62136b0f3a">297D Bùi Hữu Nghĩa, Bình Thạnh — 297dbihungha</option>
+<option value="3906bd685348814b9e58cabd0d2df145">301 Lê Quang Định, Bình Thạnh — 301lquangnh</option>
+<option value="3906bd685348817895b4e87afc3be25c">303 Sư Vạn Hạnh, Quận 10 — 303svnhnh</option>
+<option value="3906bd68534881bca0bbceb49dbfdd53">307-307A Bùi Hữu Nghĩa, Bình Thạnh — 307307abihungha</option>
+<option value="3906bd6853488159b1ebf98cac7efb42">308 Vĩnh Viễn, Quận 10 — 308vnhvin</option>
+<option value="3906bd6853488109bc19d5c01e4d48de">310 Huỳnh Văn Bánh, Phú Nhuận — 310hunhvnbnh</option>
+<option value="3906bd685348815ab662ef6d96f69faa">311 Tây Thạnh , Tân Phú — 311tythnh</option>
+<option value="3906bd6853488149a393ebd3c944c4ec">315 Nguyễn Thái Bình, Phường 12, Tân Bình — 315nguynthibnh</option>
+<option value="3906bd68534881bab297f8a660cde782">318 Phan Xích Long, Phú Nhuận — 318phanxchlong</option>
+<option value="3906bd68534881c09760fec51ef1c68c">319-321 Cộng Hòa, Tân Bình — 319321cngha</option>
+<option value="3906bd685348817a930fd6cc145a0de3">32 Nguyễn Phi Khanh, Quận 1 — 32nguynphikhanh</option>
+<option value="3906bd68534881abab3ed0caeda5c58d">324 Chợ Lớn, Phường 11, Quận 6 — 324chln</option>
+<option value="3906bd685348813caa62d4d94dc20691">324G Lý Thường Kiệt, Quận 10 — 324glthngkit</option>
+<option value="3906bd6853488193938bffd06faf028f">330-332 Cao Thắng, phường 12, Quận 10 — 330332caothng</option>
+<option value="3906bd685348813ba5ead9517d0f232f">333-335 Thống Nhất, Gò Vấp — 333335thngnht</option>
+<option value="3906bd6853488179bb4cd3ecd2ce3aa6">334 Cao Thắng, phường 12, Quận 10 — 334caothng</option>
+<option value="3906bd6853488141987bc6dbbd1462e1">334 Trường Sa, Phú Nhuận — 334trngsa</option>
+<option value="3906bd685348813cb486f5362f377fc0">334-336 Tân Sơn Nhì, Tân Phú — 334336tnsnnh</option>
+<option value="3906bd685348815daecec8bb63368906">34 Hồ Biểu Chánh, Phường 11, , Phú Nhuận — 34hbiuchnh</option>
+<option value="3906bd6853488186b29cc89292ffb88b">340 Huỳnh Văn Bánh, Phú Nhuận — 340hunhvnbnh</option>
+<option value="3906bd685348810598a2ee00f5d27061">344-346 Điện Biên Phủ, Bình Thạnh — 344346inbinph</option>
+<option value="3906bd685348812db995e4814e099c0d">346 Huỳnh Văn Bánh, Phú Nhuận — 346hunhvnbnh</option>
+<option value="3906bd68534881d2b6a0c0b5509baf9c">346A Trường Chinh, Tân Bình — 346atrngchinh</option>
+<option value="3906bd68534881798ddde79aa8afee0a">347 Sư Vạn Hạnh, Quận 10 — 347svnhnh</option>
+<option value="3906bd6853488154a6a8cd2449983ca3">348 Cộng Hòa, Tân Bình — 348cngha</option>
+<option value="3906bd68534881a398fbd3cfebbdd3bf">348B Huỳnh Văn Bánh, Phú Nhuận — 348bhunhvnbnh</option>
+<option value="3906bd6853488115901dcf9e86a2cdba">352 Lê Văn Sỹ, Quận 3 — 352lvns</option>
+<option value="3906bd6853488192b78dc9ddf2e9724f">352 Phan Đình Phùng, Phú Nhuận — 352phannhphng</option>
+<option value="3906bd68534881aba797c4ea680e7e19">355 Lý Thái Tổ, Quận 10 — 355lthit</option>
+<option value="3906bd68534881e182d1f465e3896fb8">36 Nguyễn Văn Đừng, Quận 5 — 36nguynvnng</option>
+<option value="3906bd68534881a39af9d04353580b25">361 Bạch Đằng, Bình Thạnh — 361bchng</option>
+<option value="3906bd685348818b890bfae20526c879">361A Phạm Ngũ Lão, phường PNL, Quận 1 — 361aphmnglo</option>
+<option value="3906bd68534881c1a815fba054c67add">36A Nguyễn Hồng Đào, Tân Bình — 36anguynhngo</option>
+<option value="3906bd68534881c896d5ea68a68538be">372 Lê Quang Định, Bình Thạnh — 372lquangnh</option>
+<option value="3906bd68534881a186c4df848b3cdcc4">385 Điện Biên Phủ, Bình Thạnh — 385inbinph</option>
+<option value="3906bd68534881bca545c26a2d01d1f5">385-385a Nguyễn Trọng Tuyển, P.2, Tân Bình — 385385anguyntrngtuyn</option>
+<option value="3906bd68534881c887c5c1df678caa79">385A CMT8, Quận 10 — 385acmt8</option>
+<option value="3906bd68534881829dcbe9ac36085b41">39 Nguyễn Minh Hoàng, Tân Bình — 39nguynminhhong</option>
+<option value="3906bd685348814eac76c62b6b944dc1">39 Phan Xích Long, Phú Nhuận — 39phanxchlong</option>
+<option value="3906bd68534881668676cc58a0217156">39 Đặng Tất, và Nguyễn Văn Nguyễn, Quận 1 — 39ngtt</option>
+<option value="3906bd6853488199a64cf7964f22dbe7">395 Lý Thái Tổ, Quận 10 — 395lthit</option>
+<option value="3906bd685348819eb309fa9e9cac8423">398 Lý Thường Kiệt, Tân Bình — 398lthngkit</option>
+<option value="3906bd6853488107a433c1b3bc171f93">39A Lê Văn Duyệt, Bình Thạnh — 39alvnduyt</option>
+<option value="3906bd685348815f9666d0ece3f0ffd1">4 Sầm Sơn, Tân Bình — 4smsn</option>
+<option value="3906bd685348816e86b6e4507260ce45">40 Nguyễn Thị Hồng, Gò Vấp — 40nguynthhng</option>
+<option value="3906bd68534881a29222c7040d2be4cd">401 Sư Vạn Hạnh, Quận 10 — 401svnhnh</option>
+<option value="3906bd6853488117882bef109953baa9">404 Tân Sơn Nhi, Tân Phú — 404tnsnnhi</option>
+<option value="3906bd68534881348b26e99e2cb820f1">406 Nguyễn Thị Minh Khai, Phường 5, Quận 3 — 406nguynthminhkhai</option>
+<option value="3906bd685348816592b2c477c481180c">407 Cộng Hòa, Tân Bình — 407cngha</option>
+<option value="3906bd68534881a8a8fae94c13352a6c">407c-407d Lê Văn Sỹ, Quận 3 — 407c407dlvns</option>
+<option value="3906bd685348810e9e53e05107d22844">41 Nguyễn Tri Phương, Quận 5 — 41nguyntriphng</option>
+<option value="3906bd6853488103b42dcb5b03d39e4b">426 Hoàng Văn Thụ, Tân Bình — 426hongvnth</option>
+<option value="3906bd68534881ca875dcc6a52aaaf28">426 Võ Văn Tần, Quận 3 — 426vvntn</option>
+<option value="3906bd6853488185afa4d55f8248b31d">428 Trường Sa, Phú Nhuận — 428trngsa</option>
+<option value="3906bd68534881d5a9eed263c8becf52">43 Yersin, Quận 1 — 43yersin</option>
+<option value="3906bd68534881648298eefd6278e50d">433 Cộng Hòa, Tân Bình — 433cngha</option>
+<option value="3906bd6853488173988ad596e3ebea84">44 Trương Hoàng Thanh, Tân Bình — 44trnghongthanh</option>
+<option value="3906bd6853488130a9f5caa74c9b153e">440 Cộng Hòa, P13, Tân Bình — 440cngha</option>
+<option value="3906bd685348819c8d17c8049919e98f">446 Cộng Hòa, Tân Bình — 446cngha</option>
+<option value="3906bd685348814e9e39de60b9940c39">446A-446B Nguyễn Chí Thanh, Quận 10 — 446a446bnguynchthanh</option>
+<option value="3906bd68534881a3949de1df8263504d">449/23 Sư Vạn Hạnh, Quận 10 — 44923svnhnh</option>
+<option value="3906bd68534881b196adce17f9de1de3">449B Lê Quang Định, Bình Thạnh — 449blquangnh</option>
+<option value="3906bd68534881a58f13fc720287255c">451 Hai Bà Trưng, Quận 3 — 451haibtrng</option>
+<option value="3906bd68534881f2b82bf32b598bd084">453 Hoàng Văn Thụ, Phú Nhuận — 453hongvnth</option>
+<option value="3906bd6853488129945ae4a1d3724320">453 Nguyễn Đình Chiểu, phường 5, Quận 3 — 453nguynnhchiu</option>
+<option value="3906bd6853488137accbd35e9dd51cb1">45C Cao Thắng, Quận 3 — 45ccaothng</option>
+<option value="3906bd685348819f99f0d5572e960f95">46 Huỳnh Lan Khanh, Tân Bình — 46hunhlankhanh</option>
+<option value="3906bd68534881f28eaae2425a824055">46 Trần Văn Dư, Tân Bình — 46trnvnd</option>
+<option value="3906bd68534881ffbf20f328f3d24858">462 Âu Cơ, P10, Tân Bình — 462uc</option>
+<option value="3906bd68534881c7ab82fe22a4576b31">463 Lê Văn Sỹ, Phường 12, Quận 3 — 463lvns</option>
+<option value="3906bd68534881989c1eeadb23971bc0">47 Lý Chiêu Hoàng, Quận 6 — 47lchiuhong</option>
+<option value="3906bd685348811987cad6dd2b442906">471-473 Sư Vạn Hạnh, phường 12, Quận 10 — 471473svnhnh</option>
+<option value="3906bd68534881f5b1caf28daa6fe8b1">473 Lê Quang Định, Gò Vấp — 473lquangnh</option>
+<option value="3906bd68534881699273ea137abec81b">474-476 Nguyễn Đình Chiểu, P.4, Quận 3 — 474476nguynnhchiu</option>
+<option value="3906bd68534881b5b300d3b179c9aa01">48 Huỳnh Khương Ninh, Quận 1 — 48hunhkhngninh</option>
+<option value="3906bd685348813bb609dcb9340cc662">487 Điện Biên Phủ, Bình Thạnh — 487inbinph</option>
+<option value="3906bd68534881bca85ed2492b7a677d">49 Hoa Hồng, Phú Nhuận — 49hoahng</option>
+<option value="3906bd68534881619d12c869f122b955">495-497 Phạm Văn Bạch, Phường 15, Tân Bình — 495497phmvnbch</option>
+<option value="3906bd68534881da801dfa7b0ee550ea">5 Ca Văn Thỉnh, Tân Bình — 5cavnthnh</option>
+<option value="3906bd68534881c5b620ffc760996579">5 Nguyễn Thiện Thuật, Quận 3 — 5nguynthinthut</option>
+<option value="3906bd68534881f383efeca1cb9b13a7">5-7 Ni Sư Huỳnh Liên, Tân Bình — 57nishunhlin</option>
+<option value="3906bd685348817c99d5cff901d8c7f8">50 Bàu Cát 2, Tân Bình — 50buct2</option>
+<option value="3906bd68534881c09bc4e7ebca93b107">50 Lâm Văn Bền, Tân Kiểng, Quận 7 — 50lmvnbn</option>
+<option value="3906bd68534881edb0f4c93524f0698e">50 Tân Thọ, Tân Bình — 50tnth</option>
+<option value="3906bd6853488100aa88ed3ab22cf382">50-52 đường số 7, Quận 11 — 5052ngs7</option>
+<option value="3906bd68534881ae9d31c0acabcbea69">500 Ba Tháng Hai, Quận 10 — 500bathnghai</option>
+<option value="3906bd68534881c2a38beaff5a45d413">506 Âu Cơ, Tân Bình — 506uc</option>
+<option value="3906bd68534881d4a14adbaef3726b05">50D Hoa Cau, Phú Nhuận — 50dhoacau</option>
+<option value="3906bd685348810cb188d3b27fb7f550">51 Hoa Hồng, Phú Nhuận — 51hoahng</option>
+<option value="3906bd68534881a080bcf167b4ea13ee">51C Phan Tây Hồ, Phú Nhuận — 51cphantyh</option>
+<option value="3906bd6853488106b8a5cdce9b679775">524 An Dương Vương, Quận 5 — 524andngvng</option>
+<option value="3906bd685348810da67bd226e2854cf1">530 Lê Văn Sỹ, phường 12, Quận 3 — 530lvns</option>
+<option value="3906bd6853488165ae13e542cd541776">533 Lê Quang Định, Gò Vấp — 533lquangnh</option>
+<option value="3906bd68534881eca868c17bfc9bd0a7">54 Lãnh Binh Thăng, Quận 11 — 54lnhbinhthng</option>
+<option value="3906bd68534881918b32ed89b1bae29c">541 Lạc Long Quân, Tân Bình — 541lclongqun</option>
+<option value="3906bd6853488166a1a6d91140aea011">57 Trịnh Hoài Đức, Quận 5 — 57trnhhoic</option>
+<option value="3a16bd68534880618d2fe3bffa62daa5">57 Trịnh Hoài Đức, Quận 5 (1) — 57trnhhoic</option>
+<option value="3906bd68534881679936e37ed8d6b9c5">572 Ba Tháng Hai, Quận 10 — 572bathnghai</option>
+<option value="3906bd68534881e293d0c0452b99787a">580 Sư Vạn Hạnh, Quận 10 — 580svnhnh</option>
+<option value="3906bd685348817e97e5fca4f1672614">589C Điện Biên Phủ, Quận 3 — 589cinbinph</option>
+<option value="3906bd68534881b497fcc2aa4b520a77">58B Hồng Hà, phường 2, Tân Bình — 58bhngh</option>
+<option value="3906bd68534881fd81ccdd3b2a2a6f02">59 Ngô Thời Nhiệm, Quận 3 — 59ngthinhim</option>
+<option value="3906bd68534881338203eeafdff03360">59 Võ Văn Tần, phường Võ Thị Sáu, Quận 3 — 59vvntn</option>
+<option value="3906bd68534881eb8c73dfbbac563ed1">593 Lạc Long Quân, Tân Bình — 593lclongqun</option>
+<option value="3906bd685348810a9855d3761f6784a3">593 Sư Vạn Hạnh, Quận 10 — 593svnhnh</option>
+<option value="3906bd68534881618ad6f117a31d20f9">5F Trần Nhật Duật, Quận 1 — 5ftrnnhtdut</option>
+<option value="3906bd685348811b8097da2862fb62b2">622 Cộng Hòa, Tân Bình — 622cngha</option>
+<option value="3906bd68534881b084b7ddb9fb675fab">643 Nguyễn Kiệm, Phú Nhuận — 643nguynkim</option>
+<option value="3906bd6853488164b7f0e04de846bcbf">65 Nguyễn Bỉnh Khiêm, Quận 1 — 65nguynbnhkhim</option>
+<option value="3906bd6853488186815cc707e5f0db3e">655 Xô Viết Nghệ tĩnh, Bình Thạnh — 655xvitnghtnh</option>
+<option value="3906bd6853488105b440f3d7f768057e">665 Lý Thường Kiệt P.11, Tân Bình — 665lthngkitp11</option>
+<option value="3906bd685348818ba8b3f0241b4fa837">666 Nguyễn Trãi, Quận 1 — 666nguyntri</option>
+<option value="3906bd68534881c48235f6965a1bd4f5">675 Lạc Long Quân, Tân Bình — 675lclongqun</option>
+<option value="3906bd685348819fb3ead9b87588dde5">682 Hồng Bàng p16, Quận 11 — 682hngbngp16</option>
+<option value="3906bd6853488157b55cfe4c1cdf341b">69-69A đường A4, phường 12, Tân Bình — 6969anga4</option>
+<option value="3906bd6853488138ba86f88ca8231737">71 Thủ Khoa Huân, Quận 1 — 71thkhoahun</option>
+<option value="3906bd68534881909af3ea07a93d4e90">716 Âu Cơ, Tân Bình — 716uc</option>
+<option value="3906bd68534881e0bc55d03a4789e88e">728 Trường Chinh, Tân Bình — 728trngchinh</option>
+<option value="3906bd68534881afbe4dc4db50fed38b">729 Ba Tháng Hai, Quận 10 — 729bathnghai</option>
+<option value="3906bd68534881dbb71dd2a3be9d26af">72B Trần Quốc Toản, Phường Võ Thị Sáu, Quận 3 — 72btrnqucton</option>
+<option value="3906bd685348818eb803d633b7a06c7a">73 Phạm Ngọc Thạch, Quận 3 — 73phmngcthch</option>
+<option value="3906bd685348811c8c56e9c127c73f30">75A Tái Thiết, Tân Bình — 75atithit</option>
+<option value="3906bd68534881388367c8416af95a36">76 Hoàng Văn Thụ, Phú Nhuận — 76hongvnth</option>
+<option value="3906bd68534881798a44c99bf30ef180">76 Trần Khắc Chân, Quận 1 — 76trnkhcchn</option>
+<option value="3906bd68534881fda765e58b83ac5097">76 đường A4, phường 12, Tân Bình — 76nga4</option>
+<option value="3906bd685348814c90dbfd85c963c189">78 Hùng Vương, Quận 10 — 78hngvng</option>
+<option value="3906bd685348817abed2c3b2112688a9">79 Nguyễn Văn Đậu, Bình Thạnh — 79nguynvnu</option>
+<option value="3906bd68534881a98de7e7a224b24252">8 Bàn Cờ, Quận 3 — 8bnc</option>
+<option value="3906bd68534881d2b6a8e9b62b4db42d">8 Bình Quới, Bình Thạnh — 8bnhqui</option>
+<option value="3906bd68534881359f59ee25b96fad9b">8 Nguyễn Thái Học, Quận 1 — 8nguynthihc</option>
+<option value="3906bd6853488159a7a3cea19ea030fe">8 Phan Đình Phùng, Phú Nhuận — 8phannhphng</option>
+<option value="3906bd6853488103af22db94d86e677a">8-10 Hoa Trà, Phú Nhuận — 810hoatr</option>
+<option value="3906bd68534881e3b3aadec28e10763f">800 Nguyễn Đình Chiểu, Phường 2, Quận 3 — 800nguynnhchiu</option>
+<option value="3906bd685348818db593f574166000f7">832 Trường Sa, Quận 3 — 832trngsa</option>
+<option value="3906bd68534881ebb78ae031d01ba3b7">85 Nguyễn Cư Trinh, Quận 1 — 85nguynctrinh</option>
+<option value="3906bd685348819ea878ccd032b5d439">87F Lê Văn Duyệt, Bình Thạnh — 87flvnduyt</option>
+<option value="3906bd685348812b8337d23635071a12">88 Nguyễn Trãi, Quận 1 — 88nguyntri</option>
+<option value="3906bd685348814cac24ec04ca2fddec">88 Trần Bình Trọng, p1, Quận 5 — 88trnbnhtrng</option>
+<option value="3906bd6853488167b354f102e44bdcb7">88 Trần Bình Trọng, Quận 5 — 88trnbnhtrng</option>
+<option value="3906bd68534881828b84d7d4706ea8fb">884 Âu Cơ, Tân Bình — 884uc</option>
+<option value="3906bd68534881d38b15e028f625073d">89 Nguyễn Văn Thương, Bình Thạnh — 89nguynvnthng</option>
+<option value="3906bd68534881b3b30ceb363e9ea907">9 Thích Quảng Đức, Phú Nhuận — 9thchqungc</option>
+<option value="3906bd68534881eeac49d80bdf0bb170">9-11 Nguyễn Văn Thủ, Phường Đa Kao, Quận 1 — 911nguynvnth</option>
+<option value="3906bd685348819584c4d55a2abe6b7e">91 Sương Nguyệt Ánh, Quận 1 — 91sngnguytnh</option>
+<option value="3906bd6853488199b935e02c6ab09ef1">91 Trường Chinh, Tân Bình — 91trngchinh</option>
+<option value="3906bd685348818c8071cef5a8d6a98c">928 Nguyễn Trãi, Quận 5 — 928nguyntri</option>
+<option value="3906bd68534881ca9c56ebc532278a25">94 Nguyễn Trọng Tuyển (95A), Phú Nhuận — 94nguyntrngtuyn95a</option>
+<option value="3906bd68534881fdbe30ef42a81e173a">95 Trương Công Định, Tân Bình — 95trngcngnh</option>
+<option value="3906bd685348814ab401e9d7acd0154f">96B Phan Đình Phùng, Phú Nhuận — 96bphannhphng</option>
+<option value="3906bd685348814f8c28e0a8382dab6d">98 Thiên Phước, Tân Bình — 98thinphc</option>
+<option value="3906bd68534881d68f8af63f8745c962">98 Trần Huy Liệu, Phú Nhuận — 98trnhuyliu</option>
+<option value="3906bd68534881d38212d9be1d8a22d2">99 Mai Thị Lựu, Phường ĐaKao, Quận 1 — 99maithlu</option>
+<option value="3906bd68534881e6845de0c2735dfcac">990F Âu Cơ, Tân Bình — 990fuc</option>
+<option value="3906bd6853488166a676f299be3d4137">996 Âu Cơ, Tân Bình — 996uc</option>
+<option value="3906bd68534881899760c9fe96b4a409">9A Kỳ Đồng, Quận 3 — 9akng</option>
+<option value="3906bd68534881249d9bf880ab325bc1">9A Tôn Thất Tùng, phường Bến Thành, Quận 1 — 9atnthttng</option></select></div>
+</div>
+<div class="field" style="margin-top:28px"><label for="customerName">Họ và tên</label><input id="customerName" name="customerName" required maxlength="120" autocomplete="name"></div>
+<div class="field"><label for="customerPhone">Số điện thoại</label><input id="customerPhone" name="customerPhone" required inputmode="tel" autocomplete="tel" pattern="[+()0-9.\- ]{8,24}"></div>
+<div class="field"><label for="customerEmail">Email <span class="hint">Không bắt buộc</span></label><input id="customerEmail" name="customerEmail" type="email" autocomplete="email"></div>
+<div class="field"><label for="note">Nhu cầu hoặc thời gian thuận tiện</label><textarea id="note" name="note" maxlength="1900"></textarea></div>
+<div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<button id="submitBtn" type="submit">Gửi yêu cầu</button><p class="privacy">Thông tin chỉ được dùng để phản hồi yêu cầu về tài sản đã chọn.</p>
+</form><div id="notice" class="notice" role="status">Yêu cầu đã được tiếp nhận. Chúng tôi sẽ đối chiếu và liên hệ lại.</div>
+<iframe name="submitFrame" title="Kết quả gửi biểu mẫu" hidden></iframe>
+</main><script>
+const search=document.getElementById('assetSearch'), select=document.getElementById('assetPageId');
+const all=[...select.options].slice(1).map(o=>({value:o.value,text:o.textContent}));
+search.addEventListener('input',()=>{const q=search.value.trim().toLocaleLowerCase('vi'); const current=select.value; select.innerHTML='<option value="">Chọn một tài sản…</option>'; all.filter(x=>!q||x.text.toLocaleLowerCase('vi').includes(q)).slice(0,120).forEach(x=>select.add(new Option(x.text,x.value))); if([...select.options].some(o=>o.value===current)) select.value=current;});
+document.getElementById('requestForm').addEventListener('submit',()=>{const b=document.getElementById('submitBtn'); b.disabled=true;b.textContent='Đang gửi…';setTimeout(()=>{document.getElementById('requestForm').style.display='none';document.getElementById('notice').style.display='block';},900);});
+</script></body></html>
